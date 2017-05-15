@@ -1,4 +1,5 @@
 package alg.BinarySearch;
+// Worst Case: O(log(n))
 
 public class BinarySearch {
 
