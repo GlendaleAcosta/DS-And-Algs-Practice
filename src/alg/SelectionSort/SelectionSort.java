@@ -1,5 +1,6 @@
 package alg.SelectionSort;
 // Worst Case: O(n^2)
+// Best Case: O(n^2)
 
 public class SelectionSort {
     public static void main(String[] args) {
