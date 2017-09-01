@@ -1,4 +1,4 @@
-package ds.LinkedList;
+package ds.LinkedList.BasicSinglyLinkedList;
 
 public class App {
     public static void main(String[] args) {
