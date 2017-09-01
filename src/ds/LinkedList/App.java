@@ -2,33 +2,23 @@ package ds.LinkedList;
 
 public class App {
     public static void main(String[] args) {
-        Node nodeA = new Node();
-        nodeA.data = 4;
+        LinkedList list = new LinkedList();
+        list.head = new Node(1);
+        Node second = new Node(2);
+        Node third = new Node(3);
 
-        Node nodeB = new Node();
-        nodeB.data = 3;
+        list.head.next = second;
+        second.next = third;
 
-        Node nodeC = new Node();
-        nodeC.data = 7;
-
-        Node nodeD = new Node();
-        nodeD.data = 8;
-
-        nodeA.next = nodeB;
-        nodeB.next = nodeC;
-        nodeC.next = nodeD;
-
-        System.out.println(listLength(nodeA));
-        System.out.println(listLength(nodeB));
+        traverseList(list);
     }
 
-    public static int listLength(Node aNode) {
-        int length = 0;
-        Node currentNode = aNode;
-        while(currentNode != null) {
-            length++;
-            currentNode = currentNode.next;
+    public static void traverseList(LinkedList list) {
+        Node ptr = list.head;
+
+        while(ptr != null) {
+            System.out.println(ptr.data);
+            ptr = ptr.next;
         }
-        return length;
     }
 }

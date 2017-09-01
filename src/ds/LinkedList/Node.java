@@ -2,5 +2,10 @@ package ds.LinkedList;
 
 public class Node {
     int data;
-    Node next = null;
+    Node next;
+
+    Node(int d) {
+        data = d;
+        next = null;
+    }
 }
