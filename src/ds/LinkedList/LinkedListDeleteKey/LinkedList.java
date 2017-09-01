@@ -6,16 +6,19 @@ public class LinkedList {
     public void deleteKey(int data) {
         Node node = head;
         Node prevNode = null;
-        while(node != null) {
-            if (node.data == data) {
-                if (prevNode != null) {
-                    prevNode.next = node.next;
-                } else {
-                    head = head.next;
-                }
-            }
+
+        if (node != null && node.data == data) {
+            head = head.next;
+            return;
+        }
+
+        while(node != null && node.data != data) {
             prevNode = node;
             node = node.next;
         }
+
+        if (node == null) return;
+
+        prevNode.next = node.next;
     }
 }

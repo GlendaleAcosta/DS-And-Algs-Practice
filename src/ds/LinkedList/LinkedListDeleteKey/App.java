@@ -15,7 +15,7 @@ public class App {
         second.next = third;
         third.next = fourth;
 
-        list.deleteKey(2);
+        list.deleteKey(1);
         printList(list);
     }
 
