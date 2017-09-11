@@ -15,7 +15,10 @@ public class App {
         third.next = fourth;
         fourth.next = fif;
 
-//        list.reverseList(list.head);
-//        list.traverseList(list);
+        list.printList();
+        System.out.println("-------------------");
+
+        list.head = list.reverseLinkedList(list.head);
+        list.printList();
     }
 }
