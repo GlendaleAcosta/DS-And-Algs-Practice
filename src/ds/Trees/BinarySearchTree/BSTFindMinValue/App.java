@@ -16,5 +16,7 @@ public class App {
         tree.insert(3);
         int min = tree.getMin();
         System.out.println(min + " is the min value.");
+        int max = tree.getMax();
+        System.out.println(max + " is the max value.");
     }
 }

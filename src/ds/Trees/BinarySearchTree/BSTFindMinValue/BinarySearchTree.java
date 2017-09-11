@@ -30,4 +30,12 @@ public class BinarySearchTree {
         }
         return current.data;
     }
+
+    public int getMax() {
+        Node current = this.root;
+        while(current.right != null) {
+            current = current.right;
+        }
+        return current.data;
+    }
 }
