@@ -24,6 +24,54 @@ public class App {
         list.printList();
         System.out.println("--------------------");
 
+        list.popFront();
+        list.printList();
 
+        System.out.println("--------------------");
+
+        list.pushBack(5);
+        list.printList();
+
+        System.out.println("--------------------");
+
+        list.popBack();
+        list.printList();
+
+        System.out.println("--------------------");
+
+        Node front = list.front();
+        System.out.println(front.data);
+
+        System.out.println("--------------------");
+
+        Node back = list.back();
+        System.out.println(back.data);
+
+        System.out.println("--------------------");
+
+        list.insert(3, 99);
+        list.printList();
+
+        System.out.println("--------------------");
+
+        list.erase(3);
+        list.printList();
+
+        System.out.println("--------------------");
+
+        list.root = list.reverseList();
+        list.printList();
+
+        System.out.println("--------------------");
+
+        list.removeValue(2);
+        list.printList();
+
+        System.out.println("--------------------");
+
+        list.pushBack(5);
+        list.pushBack(6);
+        list.printList();
+        list.value_n_from_end(2);
     }
 }
