@@ -1,5 +1,7 @@
 package ds.Trees.BinaryTree.BinaryTreeBFS;
 
+// O(n^2) worst case
+// For a skewed tree, printGivenLevel() takes O(n) time
 public class App {
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree(1);

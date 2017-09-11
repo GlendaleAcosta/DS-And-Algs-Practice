@@ -1,4 +1,4 @@
-package ds.Trees.BinarySearchTree;
+package ds.Trees.BinarySearchTree.BinarySearchTreeImplementation;
 
 public class App {
     public static void main(String[] args) {

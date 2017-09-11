@@ -1,4 +1,4 @@
-package ds.Trees.BinarySearchTree;
+package ds.Trees.BinarySearchTree.BinarySearchTreeImplementation;
 
 public class Node {
     int key;
