@@ -1,4 +1,4 @@
-package ds.Trees.Heaps.MaxHeap;
+package ds.Trees.Heaps.MaxHeap2;
 
 public class App {
     public static void main(String[] args) {
@@ -9,6 +9,9 @@ public class App {
         heap.insert(10);
         heap.insert(8);
         heap.insert(20);
+
+        int size = heap.getSize();
+        System.out.println(size);
 
         heap.print();
     }

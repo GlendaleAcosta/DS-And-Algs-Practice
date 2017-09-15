@@ -5,10 +5,10 @@ public class MaxHeap {
     private int capacity;
     private int pos;
 
-    public MaxHeap() {
+    public MaxHeap(int capacity) {
         pos = 1;
-        capacity = 10;
-        theHeap = new int[capacity];
+        this.capacity = capacity;
+        theHeap = new int[this.capacity];
     }
 
     public void insert(int value) {
