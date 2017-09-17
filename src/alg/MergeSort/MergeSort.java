@@ -1,53 +1,58 @@
 package alg.MergeSort;
 
 public class MergeSort {
-    public static void sort(int a[]) {
-        sort(a, 0, a.length - 1);
+    public void mergeSort(int[] a) {
+        int lo = 0;
+        int hi = a.length - 1;
+        mergeSort(a, lo, hi);
     }
 
-    public static void sort(int a[], int start, int end) {
-        if (end <= start) {
-            return;
+    public void mergeSort(int[] a, int lo, int hi) {
+        if (lo < hi) {
+            int mid = (lo + hi) / 2;
+            mergeSort(a, lo, mid);
+            mergeSort(a, mid + 1, hi);
+            merge(a, lo, mid, hi);
         }
-        int mid = (start + end) / 2;
-        sort(a, start, mid);
-        sort(a, mid + 1, end);
-        merge(a, start, mid, end);
     }
 
-    public static void merge(int[] a, int start, int mid, int end) {
-        int tempArr[] = new int[end - start + 1];
-        int leftSlot = start; // index counter for left side of array
-        int rightSlot = mid + 1; // index counter for right side of array
-        int k = 0;
+    private void merge(int [] a, int lo, int mid, int hi) {
+        int n1 = mid - lo + 1;
+        int n2 = hi - mid;
 
-        while(leftSlot <= mid && rightSlot <= end) {
-            if(a[leftSlot] < a[rightSlot]) {
-                tempArr[k] = a[leftSlot];
-                leftSlot++;
+        int L[] = new int[n1];
+        int R[] = new int[n2];
+
+        for(int i = 0; i < n1; i++) {
+            L[i] = a[lo + i];
+        }
+        for(int j = 0; j < n2; j++) {
+            R[j] = a[mid + j + 1];
+        }
+
+        int i = 0;
+        int j = 0;
+        int k = lo;
+        while(i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                a[k] = L[i];
+                i++;
             } else {
-                tempArr[k] = a[rightSlot];
-                rightSlot++;
+                a[k] = R[j];
+                j++;
             }
             k++;
         }
 
-        if(leftSlot <= mid) {
-            while(leftSlot <= mid) {
-                tempArr[k] = a[leftSlot];
-                leftSlot++;
-                k++;
-            }
-        } else if (rightSlot <= end) {
-            while(rightSlot <= end) {
-                tempArr[k] = a[rightSlot];
-                rightSlot++;
-                k++;
-            }
+        while(i < n1) {
+            a[k] = L[i];
+            i++;
+            k++;
         }
-
-        for(int i = 0; i < tempArr.length; i++) {
-            a[start + i] = tempArr[i];
+        while(j < n2) {
+            a[k] = R[j];
+            j++;
+            k++;
         }
     }
 }
