@@ -1,4 +1,4 @@
-package ds.LinkedList.LinkedListPractice_1;
+package ds.LinkedList.MergeSortedLinkedLists;
 
 public class Node {
     int data;
@@ -6,6 +6,6 @@ public class Node {
 
     public Node(int data) {
         this.data = data;
-        next = null;
+        this.next = null;
     }
 }
