@@ -18,7 +18,6 @@ public class BinaryTree {
         path[pathLen] = node.data;
         pathLen++;
 
-
         if(node.left == null && node.right == null) {
             for(int i = 0; i < pathLen; i++) {
                 System.out.print(path[i] + " ");
