@@ -26,6 +26,18 @@ public class BinarySearchTree {
         return root;
     }
 
+    public Node successor(Node root, Node n) {
+        if (root == null)
+            return null;
+
+        if (root.data <= n.data) {
+            return successor(root.right, n);
+        } else {
+            Node left = successor(root.left, n);
+            return (left != null) ? left : root;
+        }
+    }
+
     public Node printInorderSucc(Node root, Node n) {
         if (n.right != null) {
             System.out.println(minValue(n.right).data);

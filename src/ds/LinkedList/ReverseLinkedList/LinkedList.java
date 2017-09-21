@@ -17,6 +17,13 @@ public class LinkedList {
         return node;
     }
 
+    public void printReversed(Node node) {
+        if (node == null) return;
+
+        printReversed(node.next);
+        System.out.print(node.data + " ");
+    }
+
     public void printList() {
         Node node = this.head;
         while(node != null) {

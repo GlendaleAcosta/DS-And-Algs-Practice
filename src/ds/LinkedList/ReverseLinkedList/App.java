@@ -18,7 +18,8 @@ public class App {
         list.printList();
         System.out.println("-------------------");
 
-        list.head = list.reverseLinkedList(list.head);
-        list.printList();
+//        list.head = list.reverseLinkedList(list.head);
+//        list.printList();
+        list.printReversed(list.head);
     }
 }
