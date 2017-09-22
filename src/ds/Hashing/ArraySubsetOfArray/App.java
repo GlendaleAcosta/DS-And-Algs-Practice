@@ -16,16 +16,16 @@ public class App {
     }
 
     public static boolean isSubset(int[] a1, int[] a2) {
-        HashSet<Integer> hset = new HashSet<>();
+        HashSet<Integer> hash = new HashSet<>();
         int m = a1.length;
         int n = a2.length;
         for(int i = 0; i < m; i++) {
-            if(!hset.contains(a1[i]))
-                hset.add(a1[i]);
+            if(!hash.contains(a1[i]))
+                hash.add(a1[i]);
         }
 
         for(int i = 0; i < n; i++) {
-            if (!hset.contains(a2[i]))
+            if (!hash.contains(a2[i]))
                 return false;
         }
         return true;
