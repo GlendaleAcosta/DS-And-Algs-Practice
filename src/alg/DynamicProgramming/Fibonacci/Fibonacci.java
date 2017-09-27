@@ -1,4 +1,4 @@
-package alg.DynamicProgramming;
+package alg.DynamicProgramming.Fibonacci;
 
 import java.util.HashMap;
 import java.util.Map;

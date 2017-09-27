@@ -1,0 +1,23 @@
+package alg.DynamicProgramming.KnapSack;
+
+public class App {
+    public static void main(String[] args) {
+        int numOfItems = 3;
+        int capacityOfKnapsack = 5;
+
+
+        int[] weightOfItems = new int[numOfItems + 1];
+        weightOfItems[1] = 4;
+        weightOfItems[2] = 2;
+        weightOfItems[3] = 3;
+
+        int[] profitOfItems = new int[numOfItems + 1];
+        profitOfItems[1] = 10;
+        profitOfItems[2] = 4;
+        profitOfItems[3] = 7;
+
+        KnapSack KS = new KnapSack(numOfItems, capacityOfKnapsack, weightOfItems, profitOfItems);
+        KS.solve();
+        KS.showResult();
+    }
+}
