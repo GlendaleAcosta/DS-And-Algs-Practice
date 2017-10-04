@@ -1,4 +1,4 @@
-package ds.Graph.WebCrawler;
+package ds.Graph.BFS.WebCrawler;
 
 public class App {
     public static void main(String[] args) {

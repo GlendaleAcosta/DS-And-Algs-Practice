@@ -1,4 +1,4 @@
-package ds.Graph.DFS;
+package ds.Graph.DFS.BasicDFS1;
 
 import java.util.ArrayList;
 import java.util.List;

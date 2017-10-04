@@ -1,4 +1,4 @@
-package ds.Graph.TopologicalSort;
+package ds.Graph.TopologicalSort.BasicTopologicalSort;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -39,7 +39,7 @@ public class Graph {
 
     private void topologicalSortUtil(int v, boolean visited[], Stack stack) {
         visited[v] = true;
-        Integer i;
+        int i;
 
         Iterator<Integer> it = adj[v].iterator();
         while(it.hasNext()) {

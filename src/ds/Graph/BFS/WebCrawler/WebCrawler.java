@@ -1,4 +1,4 @@
-package ds.Graph.WebCrawler;
+package ds.Graph.BFS.WebCrawler;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;

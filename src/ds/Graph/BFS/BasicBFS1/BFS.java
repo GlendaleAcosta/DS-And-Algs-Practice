@@ -1,4 +1,4 @@
-package ds.Graph.BFS;
+package ds.Graph.BFS.BasicBFS1;
 import java.util.Queue;
 import java.util.LinkedList;
 public class BFS {

@@ -1,4 +1,4 @@
-package ds.Graph.BFS;
+package ds.Graph.BFS.BasicBFS1;
 
 public class App {
     public static void main(String[] args) {

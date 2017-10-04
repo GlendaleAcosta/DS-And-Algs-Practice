@@ -1,4 +1,4 @@
-package ds.Graph.BFS;
+package ds.Graph.BFS.BasicBFS1;
 import java.util.ArrayList;
 import java.util.List;
 
