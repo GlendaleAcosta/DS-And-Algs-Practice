@@ -1,4 +1,4 @@
-package alg.DijkstrasAlgorithm;
+package ds.Graph.DijkstrasAlgorithm;
 
 public class Edge {
     private double weight;

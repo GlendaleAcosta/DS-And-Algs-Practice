@@ -1,4 +1,4 @@
-package alg.DijkstrasAlgorithm;
+package ds.Graph.DijkstrasAlgorithm;
 
 import java.util.ArrayList;
 import java.util.Collections;

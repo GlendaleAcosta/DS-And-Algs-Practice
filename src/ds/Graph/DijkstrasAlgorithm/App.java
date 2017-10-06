@@ -1,4 +1,4 @@
-package alg.DijkstrasAlgorithm;
+package ds.Graph.DijkstrasAlgorithm;
 
 public class App {
     public static void main(String[] args) {
