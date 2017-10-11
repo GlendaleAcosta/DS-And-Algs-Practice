@@ -30,8 +30,8 @@ public class Graph {
         stack.push(s);
 
         while(!stack.empty()) {
-            s = stack.peek();
-            stack.pop();
+            s = stack.pop();
+
 
             if (!visited.get(s)) {
                 System.out.print(s + " ");
