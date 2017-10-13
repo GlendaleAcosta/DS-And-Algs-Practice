@@ -1,39 +1,52 @@
 package ds.Tries.TrieImplementation;
 
 public class Trie {
-    final int ALPHABET_SIZE = 26;
     TrieNode root;
 
-    public void insert(String key) {
-        int length = key.length();
-        int index;
-
-        TrieNode pcrawl = root;
-        for(int level = 0; level < length; level++) {
-            index = key.charAt(level) - 'a';
-            if (pcrawl.children[index] == null)
-                pcrawl.children[index] = new TrieNode();
-
-            pcrawl = pcrawl.children[index];
-        }
-
-        pcrawl.isEndOfWord = true;
+    public Trie() {
+        this.root = new TrieNode();
     }
 
-    public boolean search(String key) {
-        int length = key.length();
-        int index;
-        TrieNode pcrawl = root;
+    public void insertt(String word) {
+        TrieNode curr = root;
 
-        for(int level = 0; level < length; level++) {
-            index = key.charAt(level) - 'a';
-            if (pcrawl.children[index] == null)
-                return false;
-
-            pcrawl = pcrawl.children[index];
+        for(int level = 0; level < word.length(); level++) {
+            char c = word.charAt(level);
+            int i = c - 'a';
+            if (curr.children[i] == null)
+                curr.children[i] = new TrieNode();
+            curr = curr.children[i];
         }
+        curr.isEndOfWord = true;
+    }
 
-        return (pcrawl != null && pcrawl.isEndOfWord);
+    public boolean search(String word) {
+        TrieNode curr = root;
+
+        for(int level = 0; level < word.length(); level++) {
+            char c = word.charAt(level);
+            int i = c - 'a';
+            if (curr.children[i] == null) {
+                System.out.println("'" + word + "' is NOT in the trie.");
+                return false;
+            }
+            curr = curr.children[i];
+        }
+        System.out.println("'" + word + "' is in the trie.");
+        return curr.isEndOfWord;
+    }
+
+    public boolean startsWith(String prefix) {
+        TrieNode curr = root;
+
+        for(int level = 0; level < prefix.length(); level++) {
+            char c = prefix.charAt(level);
+            int i = c - 'a';
+            if (curr.children[i] == null) {
+                return false;
+            }
+            curr = curr.children[i];
+        }
+        return true;
     }
 }
-
