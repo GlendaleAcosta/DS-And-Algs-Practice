@@ -1,9 +1,9 @@
-package ds.Graph.DijkstrasAlgorithm;
+package ds.Graph.Dijkstra2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vertex implements Comparable<Vertex>{
+public class Vertex implements Comparable<Vertex> {
     private String name;
     private List<Edge> adjacenciesList;
     private boolean visited;
@@ -12,7 +12,7 @@ public class Vertex implements Comparable<Vertex>{
 
     public Vertex(String name) {
         this.name = name;
-        adjacenciesList = new ArrayList<>();
+        this.adjacenciesList = new ArrayList<>();
     }
 
     public void addNeighbor(Edge edge) {
@@ -64,6 +64,7 @@ public class Vertex implements Comparable<Vertex>{
         return this.name;
     }
 
+    @Override
     public int compareTo(Vertex otherVertex) {
         return Double.compare(this.distance, otherVertex.getDistance());
     }

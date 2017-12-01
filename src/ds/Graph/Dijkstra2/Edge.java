@@ -1,14 +1,14 @@
-package ds.Graph.DijkstrasAlgorithm;
+package ds.Graph.Dijkstra2;
 
 public class Edge {
     private double weight;
     private Vertex startVertex;
-    private Vertex targetVertex;
+    private Vertex endVertex;
 
-    public Edge(double weight, Vertex startVertex, Vertex targetVertex) {
+    public Edge(double weight, Vertex startVertex, Vertex endVertex) {
         this.weight = weight;
         this.startVertex = startVertex;
-        this.targetVertex = targetVertex;
+        this.endVertex = endVertex;
     }
 
     public double getWeight() {
@@ -27,11 +27,11 @@ public class Edge {
         this.startVertex = startVertex;
     }
 
-    public Vertex getTargetVertex() {
-        return targetVertex;
+    public Vertex getEndVertex() {
+        return endVertex;
     }
 
-    public void setTargetVertex(Vertex targetVertex) {
-        this.targetVertex = targetVertex;
+    public void setEndVertex(Vertex endVertex) {
+        this.endVertex = endVertex;
     }
 }
