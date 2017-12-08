@@ -21,9 +21,37 @@ public class Graph {
         adj[u].add(v);
     }
 
-    public void topologicalSort() {
-        int inDegree[]= new int [v];
+//    public void topologicalSort() {
+//        int inDegree[]= new int [v];
+//
+//        for(int i = 0; i < v; i++) {
+//            Iterator<Integer> it = adj[i].iterator();
+//            while(it.hasNext()) {
+//                int j = it.next();
+//                inDegree[j]++;
+//            }
+//        }
+//
+//        Queue<Integer> q = new LinkedList<>();
+//        for(int i = 0; i < v; i++) {
+//            if (inDegree[i] == 0)
+//                q.add(i);
+//        }
+//
+//        while(!q.isEmpty()) {
+//            int u = q.poll();
+//            for(int node: adj[u]) {
+//                if(--inDegree[node] == 0)
+//                    q.add(node);
+//            }
+//            System.out.print(u + " ");
+//        }
+//    }
 
+    public void topologicalSort() {
+        int inDegree[] = new int[this.v];
+
+        // calculate inDegree for every node
         for(int i = 0; i < v; i++) {
             Iterator<Integer> it = adj[i].iterator();
             while(it.hasNext()) {
@@ -32,19 +60,21 @@ public class Graph {
             }
         }
 
+        // if there's a 0 in inDegree[] add it to the queue
         Queue<Integer> q = new LinkedList<>();
         for(int i = 0; i < v; i++) {
             if (inDegree[i] == 0)
                 q.add(i);
         }
 
+        // topological sort dat bietch
         while(!q.isEmpty()) {
             int u = q.poll();
             for(int node: adj[u]) {
-                if(--inDegree[node] == 0)
+                inDegree[node] = inDegree[node] - 1;
+                if (inDegree[node] == 0)
                     q.add(node);
             }
-            System.out.print(u + " ");
         }
     }
 }

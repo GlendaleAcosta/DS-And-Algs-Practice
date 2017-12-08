@@ -20,5 +20,7 @@ public class App {
         graph.addAnEdge("E", "F", 1);
 
         graph.Dijkstra("A", "F");
+
+        graph.Prim("A");
     }
 }

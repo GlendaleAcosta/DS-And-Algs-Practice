@@ -1,9 +1,6 @@
 package ds.Graph.GraphAdjList;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.PriorityQueue;
-import java.util.Stack;
+import java.util.*;
 
 public class Graph {
     HashMap<String, Vertex> vertices;
@@ -37,7 +34,7 @@ public class Graph {
     }
 
     public void Dijkstra(String start, String end) {
-        Vertex startV =  getVertex(start);
+        Vertex startV = getVertex(start);
 
         PriorityQueue<Vertex> pQ = new PriorityQueue<>();
         for(String key : vertices.keySet()) {
@@ -65,6 +62,8 @@ public class Graph {
         Vertex v = getVertex(end);
         System.out.println("Dijkstra's Shortest Path: ");
         printDijkstra(v);
+        System.out.println();
+        System.out.println();
     }
 
     private void printDijkstra(Vertex curr) {
@@ -76,5 +75,39 @@ public class Graph {
         }
     }
 
+    public void Prim(String key) {
 
+        List<Edge> spanningTree = new ArrayList<>();
+        HashSet<Vertex> visited = new HashSet<>(this.size);
+        PriorityQueue<Edge> pQ = new PriorityQueue<>();
+        Vertex curr = this.getVertex(key);
+        visited.add(curr);
+        int totalCost = 0;
+
+        while(visited.size() < this.size) {
+            for(Edge edge : curr.adjList)
+                if (!visited.contains(edge.endVertex))
+                    pQ.add(edge);
+
+            Edge minEdge = pQ.remove();
+            spanningTree.add(minEdge);
+            totalCost += minEdge.weight;
+
+            curr = minEdge.endVertex;
+            visited.add(curr);
+        }
+
+        // print MST
+        this.printPrim(totalCost, spanningTree);
+    }
+
+
+    private void printPrim(int totalCost, List<Edge> spanningTree) {
+        System.out.println("Prim's Algorithm MST");
+        System.out.println("MST cost: " + totalCost);
+        for(Edge edge: spanningTree) {
+            System.out.print("[" + edge.startVertex.name + " - " + edge.endVertex.name + "], ");
+        }
+        System.out.println();
+    }
 }
