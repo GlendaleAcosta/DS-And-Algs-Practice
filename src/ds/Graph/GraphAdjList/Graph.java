@@ -110,4 +110,42 @@ public class Graph {
         }
         System.out.println();
     }
+
+    public boolean isBipartite() {
+        Map<String, Integer> colorHash = new HashMap<>();
+        for(String key: vertices.keySet())
+            colorHash.put(key, -1);
+
+        for(String key: vertices.keySet()) {
+            if (colorHash.get(key) == -1)
+                if (isBipartiteUtil(key, colorHash) == false)
+                    return false;
+        }
+
+        return true;
+    }
+
+    public boolean isBipartiteUtil(String src, Map<String, Integer> colorHash) {
+        colorHash.remove(src);
+        colorHash.put(src, -1);
+
+        LinkedList<Vertex> q = new LinkedList<>();
+        q.add(this.getVertex(src));
+
+        while(!q.isEmpty()) {
+            Vertex u = q.poll();
+
+            for(Edge e : u.adjList) {
+                String key2 = e.endVertex.name;
+                if (colorHash.get(key2) == -1) {
+                    colorHash.remove(key2);
+                    colorHash.put(key2, 1 - colorHash.get(u.name));
+                    q.push(this.getVertex(key2));
+                } else if (colorHash.get(key2) == colorHash.get(u.name)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

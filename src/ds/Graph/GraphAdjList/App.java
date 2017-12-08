@@ -22,5 +22,24 @@ public class App {
         graph.Dijkstra("A", "F");
 
         graph.Prim("A");
+
+
+        Graph graph2 = new Graph(6);
+        graph2.insertVertex("A");
+        graph2.insertVertex("B");
+        graph2.insertVertex("C");
+        graph2.insertVertex("D");
+        graph2.insertVertex("E");
+        graph2.insertVertex("F");
+
+        graph2.addAnEdge("A", "B", 1);
+        graph2.addAnEdge("B", "C", 1);
+        graph2.addAnEdge("C", "D", 1);
+        graph2.addAnEdge("D", "E", 1);
+        graph2.addAnEdge("E", "F", 1);
+        graph2.addAnEdge("F", "A", 1);
+
+        boolean isBipartite = graph2.isBipartite();
+        System.out.println("Bipartite: " + isBipartite);
     }
 }
