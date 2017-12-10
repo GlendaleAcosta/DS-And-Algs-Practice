@@ -20,6 +20,22 @@ public class App {
 
         g.addEdge("D", "B");
 
-        g.Kahns();
+//        g.Kahns();
+
+        Graph g2 = new Graph(5);
+        g2.insertVertex("A");
+        g2.insertVertex("B");
+        g2.insertVertex("C");
+        g2.insertVertex("D");
+        g2.insertVertex("E");
+
+        g2.addEdge("B", "A");
+        g2.addEdge("A", "C");
+        g2.addEdge("C", "B");
+        g2.addEdge("A", "D");
+        g2.addEdge("D", "E");
+
+        g2.printSCC();
+
     }
 }
