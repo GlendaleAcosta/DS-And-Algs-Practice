@@ -1,6 +1,6 @@
 package ds.Trees.BinaryTree.BinaryTreePostorderDFS;
 
-// PostOrder DFS
+// PostOrder DFS_adjList_Rec
 // Typically used for deleting the tree
 
 public class App {
@@ -11,7 +11,7 @@ public class App {
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
 
-        System.out.println("POST ORDER DFS");
+        System.out.println("POST ORDER DFS_adjList_Rec");
         tree.printPostOrder(tree.root);
     }
 

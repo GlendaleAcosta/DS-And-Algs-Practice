@@ -1,6 +1,6 @@
 package ds.Trees.BinaryTree.BinaryTreePreorderDFS;
 
-// Pre order DFS
+// Pre order DFS_adjList_Rec
 // Typically used for copying the tree
 
 public class App {
@@ -11,7 +11,7 @@ public class App {
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
 
-        System.out.println("PRE ORDER DFS");
+        System.out.println("PRE ORDER DFS_adjList_Rec");
         tree.printPreorder(tree.root);
     }
 }

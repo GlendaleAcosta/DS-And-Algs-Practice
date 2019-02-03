@@ -57,6 +57,26 @@ public class Graph {
                 }
             }
         }
+        // get starting vertex
+        // create priority queue
+        // set all vertices to have a distance of infinity
+        // set starting vertex distance to 0
+        // add starting vertex to priority queue
+        // while priority queue is not empty
+        //      pop the queue and get the node
+        //      go through its adjacent list and get the edges and vertices
+        //      get the tempDistance = currDistance + edge.weight
+        //      if (tempDistance < otherVertex.distance)
+        //          remove otherVertex from priority Queue if it's in there
+        //          set otherVertex's distance to be the tempDistance
+        //          set otherVertex's predecessor to be the current Node
+        //          Add otherVertex to priorityQueue
+
+
+        // To Print:
+        // Start from the last node
+        // Recursively check the predecessor and print the data
+        // if the node is null, do nothing
 
         // print shortest path
         Vertex v = getVertex(end);

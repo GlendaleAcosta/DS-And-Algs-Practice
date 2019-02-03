@@ -1,5 +1,10 @@
 package ds.Trees.BinarySearchTree.DeleteTree;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+
 public class BinarySearchTree {
     Node root;
 
@@ -32,6 +37,9 @@ public class BinarySearchTree {
         printTreeInOrder(node.left);
         System.out.print(node.data + " ");
         printTreeInOrder(node.right);
+        List<Integer> test = new ArrayList<>();
+//        test.sort(10, new SortByStart());
+
     }
 
     public void deleteTree(Node node) {
@@ -40,5 +48,17 @@ public class BinarySearchTree {
         deleteTree(node.left);
         deleteTree(node.right);
         node = null;
+
+        List<Integer> list = new ArrayList<>();
+//        list.ad
+    }
+}
+
+class SortByStart implements Comparator<Integer>
+{
+
+    public int compare(Integer p1, Integer p2)
+    {
+        return p1 - p2;
     }
 }

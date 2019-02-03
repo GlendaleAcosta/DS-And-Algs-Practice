@@ -11,7 +11,7 @@ public class BinaryTree {
         if (node == null) return;
 
         printInorder(node.left);
-        System.out.println(node.data);
+        System.out.print(node.data + ", ");
         printInorder(node.right);
     }
 }
